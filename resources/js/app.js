@@ -26,8 +26,8 @@ window.GoAccess = window.GoAccess || {
 		this.AppData   = (this.opts || {}).panelData || {}; // hold raw data
 		this.AppWSConn = (this.opts || {}).wsConnection || {}; // WebSocket connection
 		this.AppPrefs  = {
-			'theme': 'darkBlue',
-			'perPage': 10,
+			'theme': 'bright',
+			'perPage': 20,
 		};
 
 		if (GoAccess.Util.hasLocalStorage()) {
@@ -294,21 +294,21 @@ GoAccess.Nav = {
 	events: function () {
 		$('.nav-bars').onclick = function (e) {
 			e.stopPropagation();
-			this.renderMenu(e);
+			//this.renderMenu(e);
 		}.bind(this);
 
 		$('.nav-gears').onclick = function (e) {
 			e.stopPropagation();
-			this.renderOpts(e);
+			//this.renderOpts(e);
 		}.bind(this);
 
 		$('.nav-minibars').onclick = function (e) {
 			e.stopPropagation();
-			this.renderOpts(e);
+			//this.renderOpts(e);
 		}.bind(this);
 
 		$('body').onclick = function (e) {
-			$('nav').classList.remove('active');
+			//$('nav').classList.remove('active');
 		}.bind(this);
 
 		$$('.export-json', function (item) {
@@ -424,18 +424,18 @@ GoAccess.Nav = {
 		o[this.getTheme()] = true;
 		o['perPage' + this.getPerPage()] = true;
 
-		$('.nav-list').innerHTML = GoAccess.AppTpls.Nav.opts.render(o);
-		$('nav').classList.toggle('active');
+		//$('.nav-list').innerHTML = GoAccess.AppTpls.Nav.opts.render(o);
+		//$('nav').classList.toggle('active');
 		this.events();
 	},
 
 	// Render left-hand side navigation given the available panels.
 	renderMenu: function (e) {
-		$('.nav-list').innerHTML = GoAccess.AppTpls.Nav.menu.render({
-			'nav': this.getItems(),
-			'overall': window.location.hash.substr(1) == '',
-		});
-		$('nav').classList.toggle('active');
+		//$('.nav-list').innerHTML = GoAccess.AppTpls.Nav.menu.render({
+		//	'nav': this.getItems(),
+		//	'overall': window.location.hash.substr(1) == '',
+		//});
+		//$('nav').classList.toggle('active');
 		this.events();
 	},
 
@@ -460,7 +460,7 @@ GoAccess.Nav = {
 
 	// Render left-hand side navigation given the available panels.
 	renderWrap: function (nav) {
-		$('nav').innerHTML = GoAccess.AppTpls.Nav.wrap.render({});
+		//$('nav').innerHTML = GoAccess.AppTpls.Nav.wrap.render({});
 	},
 
 	// Iterate over all available panels and render each.
@@ -1238,7 +1238,7 @@ GoAccess.App = {
 	},
 
 	initDom: function () {
-		$('nav').classList.remove('hide');
+		//$('nav').classList.remove('hide');
 		$('.container').classList.remove('hide');
 		$('.spinner').classList.add('hide');
 	},
@@ -1253,7 +1253,7 @@ GoAccess.App = {
 	initialize: function () {
 		this.setInitSort();
 		this.setTpls();
-		GoAccess.Nav.initialize();
+		//GoAccess.Nav.initialize();
 		this.initDom();
 		GoAccess.OverallStats.initialize();
 		GoAccess.Panels.initialize();

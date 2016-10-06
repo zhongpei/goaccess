@@ -222,8 +222,8 @@ static void
 print_html_body (FILE * fp, const char *now)
 {
   fprintf (fp,
-  "<nav class='hidden-xs hidden-sm hide'>"
-  "</nav>"
+ // "<nav class='hidden-xs hidden-sm hide disabled'>"
+ // "</nav>"
 
   "<i class='spinner fa fa-circle-o-notch fa-spin fa-3x fa-fw'></i>"
   "<div class='container hide'>"
@@ -233,13 +233,13 @@ print_html_body (FILE * fp, const char *now)
   "<div class='pull-right'>"
   "<h4>"
   "<span class='label label-info' style='display:%s'>"
-  "Last Updated: <span class='last-updated'>%s</span>"
+  "更新: <span class='last-updated'>%s</span>"
   "</span>"
   "</h4>"
   "</div>"
   "<h1>"
   "<span class='hidden-xs hidden-sm'>"
-  "<i class='fa fa-tachometer'></i> Dashboard"
+  "<i class='fa fa-tachometer'></i> HK统计"
   "</span>"
   "<span class='visible-xs visible-sm'>"
   "<i class='fa fa-bars nav-minibars'></i>"
